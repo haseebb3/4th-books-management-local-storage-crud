@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <h3 class="text-center p-3" style="background-color: rgb(206, 241, 253);">books management system 4th local storage crud</h3>
+<section>
+  <div class="container">
+    <div class="row mt-4">
+      <div class="col-md-10 offset-md-1">
+        <div class="card">
+          <div class="card-header bg-info text-center"><h1>Enter Your Book Details</h1></div>
+          <div class="card-body">
+            <form id="booksForm">
+              <div class="form-row">
+                <div class="col-md-6 form-group">
+                  <label for="bookName">Enter Book Name</label>
+                  <input required type="text" class="form-control" id="bookName">
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="author">Enter Author</label>
+                  <input required type="text" class="form-control" id="author">
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="genere">Enter Genere</label>
+                  <input required type="text" class="form-control" id="genere">
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="publishDate">Publish Date</label>
+                  <input required type="date" class="form-control" id="publishDate">
+                </div>
+              </div>
+              <button class="btn btn-sm btn-block btn-outline-info" id="addBookBtn">Add Book</button>
+              <button type="button" class="btn btn-sm btn-block btn-info d-none" id="updateBookBtn">Update Book</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-10 offset-md-1 mt-4 mb-5">
+        <div class="card">
+          <div class="card-header text-center bg-info">
+            <h2>Your Published Books</h2>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive mt-2">
+              <table class="table table-bordered">
+                <thead style="background-color: rgb(206, 241, 253);">
+                  <tr>
+                    <th>Sr No</th>
+                    <th>Book Name</th>
+                    <th>Book Author</th>
+                    <th>Book Genere</th>
+                    <th>Published Date</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="booksContainer">
+                  <!-- <tr>
+                    <td>1</td>
+                    <td>Power of sub con mind</td>
+                    <td>Joseph Murphy</td>
+                    <td>Self helf</td>
+                    <td>01/01/1990</td>
+                    <td><button class="btn btn-sm btn-outline-info">Edit</button></td>
+                    <td><button class="btn btn-sm btn-outline-danger">Delete</button></td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
