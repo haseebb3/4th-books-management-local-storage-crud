@@ -1,6 +1,7 @@
 const booksForm = document.getElementById("booksForm");
 let booksArray = JSON.parse(localStorage.getItem("booksArr")) || [];
-  const updateBookBtn = document.getElementById("updateBookBtn");
+const updateBookBtn = document.getElementById("updateBookBtn");
+console.log("kdjkdjfk");
 
 
 
@@ -96,7 +97,7 @@ function onEdit(ele) {
 
 
 //udpate
-function onUpdate(){
+function onUpdate() {
   const bookName = document.getElementById("bookName");
   const author = document.getElementById("author");
   const genere = document.getElementById("genere");
@@ -143,11 +144,14 @@ function onDelete(ele) {
     confirmButtonText: "Yes, delete it!"
   }).then((result) => {
     if (result.isConfirmed) {
+      const booksContainer = document.getElementById("booksContainer");
       const deleteIndex = booksArray.findIndex(book => book.id === deleteId);
       booksArray.splice(deleteIndex, 1);
       setLocalStorage();
       ele.closest("tr").remove();
-
+      //reset seriel number 
+      let trs = booksContainer.querySelectorAll("tr td:first-child");
+      trs.forEach( (td,idx) => td.innerText = idx + 1)
       Swal.fire({
         title: "Deleted!",
         text: "Your book has been deleted.",
@@ -157,6 +161,10 @@ function onDelete(ele) {
   });
 }
 
+const booksContainer = document.getElementById("booksContainer");
 
+let trs = booksContainer.querySelectorAll("tr td:first-child");
+console.log(trs)
+console.log("kdjkdjfk");
 booksForm.addEventListener("submit", onSubmit);
 updateBookBtn.addEventListener("click", onUpdate);
